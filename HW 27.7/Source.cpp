@@ -2,29 +2,29 @@
 #include <string>
 
 
-string User::getLogin()                       // Выдача имени
+string User::getLogin()                       // Р’С‹РґР°С‡Р° Р»РѕРіРёРЅР°
 {
     return login_;
 }
 
-string User::getPassword()                     // Выдача пароля
+string User::getPassword()                     // Р’С‹РґР°С‡Р° РїР°СЂРѕР»СЏ
 {
     return password_;
 }
 
-string User::getName()                        // Выдача Имени
+string User::getName()                        // Р’С‹РґР°С‡Р° РРјРµРЅРё
 {
     return name_;
 }
 
-void User::displayUser()                        // Вывод логина, имени и пароля
+void User::displayUser()                        // Р’С‹РІРѕРґ Р»РѕРіРёРЅР°, РёРјРµРЅРё Рё РїР°СЂРѕР»СЏ
 {
     cout << "Login - " << login_ << endl;
     cout << "Password - " << password_ << endl;
     cout << "Name - " << name_ << endl;
 }
 
-void Mail::displaymail(string Authormes)                        // Вывод cooбщений
+void Mail::displaymail(string Authormes)                        // Р’С‹РІРѕРґ cooР±С‰РµРЅРёР№
 {
     if (name_ == Authormes)
         cout << author_ << " : " << mesage_ << endl;
@@ -33,7 +33,7 @@ void Mail::displaymail(string Authormes)                        // Вывод cooбщен
 void Logger::writeLog(string data)
 {
     if (!logfile)
-        // Для создания файла используем параметр ios::trunc
+        // Р”Р»СЏ СЃРѕР·РґР°РЅРёСЏ С„Р°Р№Р»Р° РёСЃРїРѕР»СЊР·СѓРµРј РїР°СЂР°РјРµС‚СЂ ios::trunc
         logfile = fstream("logfile.txt", fstream::in | fstream::out | fstream::trunc);
     if (!logfile)
     {
@@ -64,7 +64,7 @@ string Logger::readLog()
 }
 
 
-int backint(string a)                        // Перевод текста в int (отсекаем неправильный выбор в меню)
+int backint(string a)                        // РџРµСЂРµРІРѕРґ С‚РµРєСЃС‚Р° РІ int (РѕС‚СЃРµРєР°РµРј РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІС‹Р±РѕСЂ РІ РјРµРЅСЋ)
 {
     int b;
     if (a == "1")
