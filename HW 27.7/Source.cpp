@@ -35,7 +35,7 @@ void Logger::writeLog(string data)
     if (!logfile)
         // Для создания файла используем параметр ios::trunc
         logfile = fstream("logfile.txt", fstream::in | fstream::out | fstream::trunc);
-    if (!logfile)
+    if (logfile)
     {
         shared_mutex.lock();
         this->logfile << data << std::endl;
@@ -49,7 +49,7 @@ void Logger::writeLog(string data)
 
 string Logger::readLog()
 {
-    if (!logfile)
+    if (logfile)
     {
         shared_mutex.lock_shared();
         string read;
