@@ -7,32 +7,32 @@
 #include <shared_mutex>
 using namespace std;
 
-class User                  // Класс пользователей с паролем и именем
+class User                  // РљР»Р°СЃСЃ РїРѕР»СЊР·РѕРІР°С‚РµР»РµР№ СЃ РїР°СЂРѕР»РµРј Рё РёРјРµРЅРµРј
 {
 public:
     User(const string& log, const string& pas, const string& nam) : login_(log), password_(pas), name_(nam) {}
-    void displayUser();    // Вывод логина, имени и пароля
-    string getLogin();     // Выдача логина
-    string getPassword();  // Выдача пароля
-    string getName();      // Выдача имени
+    void displayUser();    // Р’С‹РІРѕРґ Р»РѕРіРёРЅР°, РёРјРµРЅРё Рё РїР°СЂРѕР»СЏ
+    string getLogin();     // Р’С‹РґР°С‡Р° Р»РѕРіРёРЅР°
+    string getPassword();  // Р’С‹РґР°С‡Р° РїР°СЂРѕР»СЏ
+    string getName();      // Р’С‹РґР°С‡Р° РёРјРµРЅРё
 private:
     string login_;
     string password_;
     string name_;
 };
 
-class Mail                  // Класс с архивом сообщений
+class Mail                  // РљР»Р°СЃСЃ СЃ Р°СЂС…РёРІРѕРј СЃРѕРѕР±С‰РµРЅРёР№
 {
 public:
     Mail(const string& nam, const string& mes, const string& auth) : name_(nam), mesage_(mes), author_(auth) {}
-    void displaymail(string Authormes);              // Вывод cooбщений
+    void displaymail(string Authormes);              // Р’С‹РІРѕРґ cooР±С‰РµРЅРёР№
 private:
     string name_;
     string mesage_;
     string author_;
 };
 
-class Logger                          // Класс логирования сообщений
+class Logger                          // РљР»Р°СЃСЃ Р»РѕРіРёСЂРѕРІР°РЅРёСЏ СЃРѕРѕР±С‰РµРЅРёР№
 {
     shared_mutex shared_mutex;
     fstream logfile;
@@ -43,8 +43,8 @@ public:
         logfile.open("logfile.txt", fstream::in | fstream::out | fstream::trunc);
         shared_mutex.unlock();
     }
-    void writeLog(string data);      // Запись логов
-    string readLog();                // Чтение логов
+    void writeLog(string data);      // Р—Р°РїРёСЃСЊ Р»РѕРіРѕРІ
+    string readLog();                // Р§С‚РµРЅРёРµ Р»РѕРіРѕРІ
 
     ~Logger()
     {
@@ -54,4 +54,4 @@ public:
     }
 };
 
-int backint(string a);   // Перевод текста в int (отсекаем неправильный выбор в меню)
+int backint(string a);   // РџРµСЂРµРІРѕРґ С‚РµРєСЃС‚Р° РІ int (РѕС‚СЃРµРєР°РµРј РЅРµРїСЂР°РІРёР»СЊРЅС‹Р№ РІС‹Р±РѕСЂ РІ РјРµРЅСЋ)
