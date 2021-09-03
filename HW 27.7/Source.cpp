@@ -38,7 +38,7 @@ void Logger::writeLog(string data)
     if (logfile)
     {
         shared_mutex.lock();
-        this->logfile << data << std::endl;
+        this->logfile << a << endl << data << endl;
         shared_mutex.unlock();
     }
     else
