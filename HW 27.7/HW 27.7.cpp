@@ -23,7 +23,7 @@ int main()
     string c;                  // Переменная для меню temp
     bool y = true;             // Переменная выхода из программы
     bool temp;                 // Служебная переменная
-    
+    Logger first;
     while (y == true)
     {
         cout << "1 - Create user / 2 - Enter chat / 3 - Exit program / 4 - HELP / 5 - Loggs" << endl;
@@ -117,10 +117,7 @@ int main()
                                         }
                                         mail.emplace_back(Nameadr, mes, Authormes);
                                         temp = true;
-                                        for (auto& g : logg)
-                                        {
-                                            g.writeLog(mes);
-                                        }
+                                        first.writeLog(mes);
                                     }
                                 }
                                 if (!temp)
@@ -154,10 +151,7 @@ int main()
             }
             break;
         case 5:                                                            //Посмотреть файл логов
-            for (auto& g : logg)
-            {
-                cout << g.readLog() << endl;
-            }
+            cout << first.readLog() << endl;
             break;
         default:
             cout << "Bad choise" << endl;
