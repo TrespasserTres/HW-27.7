@@ -37,7 +37,6 @@ class Logger                          // Класс логирования со�
     shared_mutex shared_mutex;
     fstream logfile;
 public:
-    int a = 1;
     Logger()
     {
         shared_mutex.lock();
