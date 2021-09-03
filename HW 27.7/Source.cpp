@@ -38,7 +38,7 @@ void Logger::writeLog(string data)
     if (logfile)
     {
         shared_mutex.lock();
-        this->logfile << a << endl << data << endl;
+        this->logfile << data << " ";
         shared_mutex.unlock();
     }
     else
@@ -51,9 +51,11 @@ string Logger::readLog()
 {
     if (logfile)
     {
-        shared_mutex.lock_shared();
         string read;
-        getline(this->logfile, read);
+        shared_mutex.lock_shared();
+        logfile.seekg(0, ios_base::beg);
+        // Считываем данные из файла
+        getline(logfile, read);
         shared_mutex.unlock_shared();
         return read;
     }
