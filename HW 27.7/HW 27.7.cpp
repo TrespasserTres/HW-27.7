@@ -1,4 +1,4 @@
-﻿#include<iostream>
+#include<iostream>
 #include <string>
 #include "Header.h"
 using namespace std;
@@ -10,7 +10,7 @@ int main()
 {
     vector<User> users;
     vector<Mail> mail;
-    vector<Logger> logg;
+    vector <Logger> logg;
     string logcr;              // Переменная для создания Логина
     string namecr;             // Переменная для создания Имени
     string pascr;              // Переменная для создания Пароля
@@ -32,7 +32,7 @@ int main()
         switch (choice)
         {
         case 1:                                                            //Регистрация пользователей
-            cout << "Enter login: " << endl;                           //Запрос логина для первого пользователя
+            cout << "Enter login: " << endl;                               //Запрос логина для первого пользователя
             cin >> logcr;
             temp = false;
             for (auto& u : users)
